@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "2dcc9932-cdac-4798-92c6-5ea2853cf0c8",
+		"name": "Event Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "createuser",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Preetish Srivastav\",\r\n    \"email\":\"preetish@gmail.com\",\r\n    \"password\":\"AmanVishnoi\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/createuser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"createuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"aman@gmail.com\",\r\n    \"password\":\"AmanVishnoi\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MTY5ODI2MzdlOWNhNjUwMGMyYzhlIn0sImlhdCI6MTY0OTUwMjU5NH0.sWUyaRv7MIcwJSqiU_MVH24xEZ1I8ixAt4RYRxz8dVs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changepassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"aman@gmail.com\",\r\n    \"oldpassword\":\"AmanVishnoi\",\r\n    \"newpassword\":\"Aman Vishnoi\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/changePassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"aman@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"aman@gmail.com\",\r\n    \"otp\":\"123456\",\r\n    \"newpassword\":\"AmanVishnoi\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/updatePassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "createEvent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MTk4NDQ3MmUyZjVlMDI2YjQ2NjA0In0sImlhdCI6MTY0OTUxNDU2NH0.ISTOzzlbVTY3c5XmC5SVeL500gxeslcTseGd8tgeffo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Aman Vishnoi\",\r\n    \"description\":\"Just party time with Aman Preetish\",\r\n    \"invites\": [\"aneesh@gmail.com\", \"aman@gmail.com\"],\r\n    \"date\": \"2018-02-21\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/event/createEvent",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"createEvent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateevent",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MTY5ODI2MzdlOWNhNjUwMGMyYzhlIn0sImlhdCI6MTY0OTUwMzc5MH0.eYhkl5FtBwK2NYnfrsJNmKC_uSoNbsUsjP0JBzf8ll0",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"Party at Aneesh House\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/event/updateEvent/625169ce637e9ca6500c2c90",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"updateEvent",
+								"625169ce637e9ca6500c2c90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEventDetails",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"eventID\": \"625169ce637e9ca6500c2c90\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/event/eventDetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"eventDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userEventDetails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MTY5ODI2MzdlOWNhNjUwMGMyYzhlIn0sImlhdCI6MTY0OTUwMjU5NH0.sWUyaRv7MIcwJSqiU_MVH24xEZ1I8ixAt4RYRxz8dVs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/event/userEventDetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"userEventDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userEventConstraint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI1MTk4NDQ3MmUyZjVlMDI2YjQ2NjA0In0sImlhdCI6MTY0OTUxNDU2NH0.ISTOzzlbVTY3c5XmC5SVeL500gxeslcTseGd8tgeffo",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\":\"2019-07-12\",\r\n    \"search\":\"aman@gmail.com\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/event/userEventConstraint",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"event",
+								"userEventConstraint"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
